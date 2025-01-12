@@ -3,8 +3,8 @@ from typing import List
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import HTMLResponse
 
-from schema import Balance, CreateTransaction, CreateUser
-from service import *
+from .schema import Balance, CreateTransaction, CreateUser
+from .service import *
 
 router = APIRouter()
 
@@ -16,13 +16,15 @@ def root_endpoint():
         <html>
         <head><title>Splitwise API</title></head>
         <body style="margin:0; height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;">
+           <h3>Our Group : </h3>
             <div>
                 <p>
-                    <a href="https://subh.me/">website</a> &middot;
-                    <a href="https://www.linkedin.com/in/subhrashisdas/">linkedin</a> &middot;
-                    <a href="https://github.com/subhrashisdas/">github</a>
+                    <a href="#">Tanmoy Debnath</a> &middot;
+                    <a href="#">Debapratim Bhattacharjee</a> &middot;
+                    <a href="#">Souradeep Debbarma</a> &middot;
+                    <a href="#">Aushik Rudra Paul</a>
                 </p>
-                <p>&copy; 2024 Subhrashis Das. All rights reserved.</p>
+                <p>&copy; 2024 Double Data Group. All rights reserved.</p>
             </div>
         </body>
         </html>

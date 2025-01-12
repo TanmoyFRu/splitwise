@@ -3,8 +3,8 @@ from typing import AsyncIterator
 from fastapi import FastAPI
 from sqlmodel import SQLModel
 
-from api import router as api_router
-from core import engine
+from .app import router as api_router
+from .core import engine
 
 
 async def lifespan(app: FastAPI) -> AsyncIterator[None]:

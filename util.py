@@ -1,7 +1,7 @@
 from typing import List
 
-from model import Ledger
-from schema import CreateTransaction, UserSplit
+from .model import Ledger
+from .schema import CreateTransaction, UserSplit
 
 
 def convert_percentage_to_amount(

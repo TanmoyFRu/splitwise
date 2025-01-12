@@ -1,23 +1,23 @@
 from typing import List, Literal, Optional
-
+from fastapi import Query
 from pydantic import BaseModel, EmailStr, conint, model_validator
 
-from model import Ledger
+from .model import Ledger
 
 
 class UserSplit(BaseModel):
-    user_id: conint(ge=1)
-    value: Optional[conint(ge=1)] = None
+    user_id: conint(ge=1) = Query(None, max_length=10)
+    value: Optional[conint(ge=1)] = Query(None)
 
 
 class Balance(BaseModel):
-    user_id: conint(ge=1)
+    user_id: conint(ge=1) = Query(None, max_length=10)
     total_amount: int
 
 
 class CreateTransaction(BaseModel):
-    description: str
-    total_amount: conint(ge=1)
+    description: str 
+    total_amount: conint(ge=1) = Query(None, max_length=10)
     split_type: Literal["even", "uneven"]
     computation_type: Literal["percentage", "amount"]
     from_users: List[UserSplit]
